@@ -1,19 +1,17 @@
 package mainPackage;
 
-import mainPackage.tests.UpperTest1;
+import mainPackage.tests.*;
 import mainPackage.util.NodeTracker;
 
 
 public class App {
     public static void main(String[] args) {
-//        NodeTracker.saveCSVWithPosition(UpperTest1.getInstance(), "상지패턴1 자리맞춤");
-//        NodeTracker.saveCSVWithPosition(UpperTest2.getInstance(), "상지패턴2 자리맞춤");
-//        NodeTracker.saveCSVWithPosition(MultiFlexionTest.getInstance(), "다중분절굴곡 자리맞춤");
-//        NodeTracker.saveCSVWithPosition(OneLegTest.getInstance(), "한다리서기 자리맞춤");
-//        NodeTracker.printList(UpperTest1.getInstance());
+        NodeTracker.saveCSVWithPosition(SpineTest1.getInstance(), "척추1");
+        NodeTracker.saveCSVWithPosition(SpineTest2.getInstance(), "척추2");
+        NodeTracker.saveCSVWithPosition(SpineTest3.getInstance(), "척추3");
 
-        NodeTracker.saveCSVWithoutPosition(UpperTest1.getInstance(), "바보맨");
-        NodeTracker.saveCSVWithPosition(UpperTest1.getInstance(), "바보맨2");
+        NodeTracker.saveCSVWithPosition(UpperTest1.getInstance(), "상체1");
+        NodeTracker.saveCSVWithPosition(UpperTest2.getInstance(), "상체2");
     }
 }
 
