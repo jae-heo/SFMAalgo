@@ -1,27 +1,30 @@
 package mainPackage.util;
 
+import mainPackage.domain.Child;
 import mainPackage.domain.Node;
+import mainPackage.domain.NodePrint;
 import mainPackage.tests.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class NodeTracker {
-    public static ArrayList<ArrayList<NodePrintFormat>> printLists;
+    public static ArrayList<ArrayList<NodePrint>> printLists;
 
     public static void printList(Test test) {
         printLists = new ArrayList<>();
-        ArrayList<NodePrintFormat> printList = new ArrayList<>();
+        ArrayList<NodePrint> printList = new ArrayList<>();
         iterNode(test.getHead(), printList);
 
-        for (ArrayList<NodePrintFormat> list : printLists) {
+        for (ArrayList<NodePrint> list : printLists) {
             System.out.println("\n\n");
             System.out.print("step "+ printLists.indexOf(list) +": ");
 
-            for (NodePrintFormat nodePrintFormat : list) {
-                System.out.print(list.indexOf(nodePrintFormat) + 1 + "번 테스트(" + nodePrintFormat.getNode().getName() + "): " + nodePrintFormat.getSelection()+ " ");
+            for (NodePrint nodePrint : list) {
+                System.out.print(list.indexOf(nodePrint) + 1 + "번 테스트(" + nodePrint.getNode().getName() + "): " + nodePrint.getSelection()+ " ");
             }
         }
     }
@@ -29,7 +32,7 @@ public class NodeTracker {
     public static void saveCSVWithPosition(Test test, String fileName) {
         printLists = new ArrayList<>();
         ArrayList<String> nodeNameOrders = test.getNameList();
-        ArrayList<NodePrintFormat> printList = new ArrayList<>();
+        ArrayList<NodePrint> printList = new ArrayList<>();
         int pos;
 
         iterNode(test.getHead(), printList);
@@ -38,10 +41,10 @@ public class NodeTracker {
             StringBuilder sb = new StringBuilder();
 
             //각 프린트 해야하는 줄마다...
-            for (ArrayList<NodePrintFormat> list : printLists) {
+            for (ArrayList<NodePrint> list : printLists) {
                 pos = 0;
                 // 각 노드마다...
-                for (NodePrintFormat nodePrintFormat : list) {
+                for (NodePrint nodePrintFormat : list) {
                     //만약 노드의 이름이 지금 포지션에 맞는경우
                     if (nodePrintFormat.getNode().getName().equals(nodeNameOrders.get(list.indexOf(nodePrintFormat) + pos))) {
                         //바로 써준다.
@@ -70,13 +73,13 @@ public class NodeTracker {
 
     public static void saveCSVWithoutPosition(Test test, String fileName) {
         printLists = new ArrayList<>();
-        ArrayList<NodePrintFormat> printList = new ArrayList<>();
+        ArrayList<NodePrint> printList = new ArrayList<>();
         iterNode(test.getHead(), printList);
 
         try (PrintWriter writer = new PrintWriter(new File(fileName + ".csv"))) {
             StringBuilder sb = new StringBuilder();
-            for (ArrayList<NodePrintFormat> list : printLists) {
-                for (NodePrintFormat nodePrintFormat : list) {
+            for (ArrayList<NodePrint> list : printLists) {
+                for (NodePrint nodePrintFormat : list) {
                     sb.append(nodePrintFormat.getNode().getName() + ": " + nodePrintFormat.getSelection());
                     sb.append(",");
                 }
@@ -88,41 +91,17 @@ public class NodeTracker {
         }
     }
 
-    private static void iterNode(Node node, ArrayList<NodePrintFormat> printList) {
-        if (node.getO().getNode() != null) {
-            ArrayList<NodePrintFormat> printListO = (ArrayList<NodePrintFormat>) printList.clone();
-            printListO.add(new NodePrintFormat(node, "O", null));
-            iterNode(node.getO().getNode(), printListO);
-        }
-
-        if (node.getX().getNode() != null) {
-            ArrayList<NodePrintFormat> printListX = (ArrayList<NodePrintFormat>) printList.clone();
-            printListX.add(new NodePrintFormat(node, "X", null));
-            iterNode(node.getX().getNode(), printListX);
-        }
-
-        if (node.getP().getNode() != null && !node.getIsXPCombined()) {
-            ArrayList<NodePrintFormat> printListP = (ArrayList<NodePrintFormat>) printList.clone();
-            printListP.add(new NodePrintFormat(node, "P", null));
-            iterNode(node.getP().getNode(), printListP);
-        }
-
-        if (node.getO().getNode() == null) {
-            ArrayList<NodePrintFormat> printListO = (ArrayList<NodePrintFormat>) printList.clone();
-            printListO.add(new NodePrintFormat(node, "O", node.getO().getNextTest()));
-            printLists.add(printListO);
-        }
-
-        if (node.getX().getNode() == null) {
-            ArrayList<NodePrintFormat> printListX = (ArrayList<NodePrintFormat>) printList.clone();
-            printListX.add(new NodePrintFormat(node, "X", node.getX().getNextTest()));
-            printLists.add(printListX);
-        }
-
-        if (node.getP().getNode() == null && !node.getIsXPCombined()) {
-            ArrayList<NodePrintFormat> printListP = (ArrayList<NodePrintFormat>) printList.clone();
-            printListP.add(new NodePrintFormat(node, "P", node.getP().getNextTest()));
-            printLists.add(printListP);
+    private static void iterNode(Node node, ArrayList<NodePrint> printList) {
+        for (Map.Entry<String, Child> entry : node.getChildren().entrySet()) {
+            if (entry.getValue().getNode() != null) {
+                ArrayList<NodePrint> newPrintList = (ArrayList<NodePrint>) printList.clone();
+                newPrintList.add(new NodePrint(node, entry.getKey()));
+                iterNode(entry.getValue().getNode(), newPrintList);
+            } else {
+                ArrayList<NodePrint> newPrintList = (ArrayList<NodePrint>) printList.clone();
+                newPrintList.add(new NodePrint(node, entry.getKey()));
+                printLists.add(newPrintList);
+            }
         }
     }
 }

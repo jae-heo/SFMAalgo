@@ -1,10 +1,11 @@
 package mainPackage.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 @Setter
 @Getter
@@ -12,16 +13,14 @@ import java.util.List;
 @AllArgsConstructor
 public class Node {
     private String name;
-    private HashMap<String, Child> children;
+    @Builder.Default
+    private HashMap<String, Child> children = new HashMap<>();
     private String imageFileName;
     private Boolean isCollectSense = false;
+
+    public Node addChild(String selection, Child child) {
+        this.children.put(selection, child);
+        return this;
+    }
 }
 
-@Builder
-@AllArgsConstructor
-@Getter
-class Child {
-    private final Node node;
-    private final String description;
-    private Node nextTest;
-}
