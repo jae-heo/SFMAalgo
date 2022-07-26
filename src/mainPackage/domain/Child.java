@@ -13,12 +13,13 @@ public class Child {
     private Node node;
     private String description;
     @Builder.Default
-    private Node nextTest = null;
+    private Node nextTest1 = null;
+    @Builder.Default
+    private Node nextTest2 = null;
 
     public Child(String description) {
         this.node = null;
         this.description = description;
-        nextTest = null;
     }
 
     public Child (Node node, String description) {
