@@ -21,7 +21,7 @@ public class OneLegTest2 extends Test{
                 .imageFileName("6_10")
                 .build()
                 .addChild("O", Child.builder().description("현재까지 빨강, 주황, 파란상자가 없으면 = 고유수용성감각 장애").build())
-                .addChild("X", Child.builder().node(node6).build());
+                .addChild("X_P", Child.builder().node(node6).build());
 
         Node node4 = Node.builder()
                 .name("수동 저측굴곡 30~40도")
