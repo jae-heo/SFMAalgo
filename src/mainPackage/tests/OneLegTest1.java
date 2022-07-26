@@ -4,10 +4,10 @@ package mainPackage.tests;
 import mainPackage.domain.Child;
 import mainPackage.domain.Node;
 
-public class OneLegTest extends Test{
+public class OneLegTest1 extends Test{
 
     public static Test instance;
-    public OneLegTest() {
+    public OneLegTest1() {
         Node node5 = Node.builder()
                 .name("네발기기자세 상-하체 교차 뻗기")
                 .imageFileName("6_5")
@@ -56,7 +56,7 @@ public class OneLegTest extends Test{
     }
 
     public static Test getInstance() {
-        if (OneLegTest.instance == null) { OneLegTest.instance = new OneLegTest();}
+        if (OneLegTest1.instance == null) { OneLegTest1.instance = new OneLegTest1();}
         return instance;
     }
 }
