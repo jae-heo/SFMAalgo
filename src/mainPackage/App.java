@@ -12,6 +12,12 @@ public class App {
 
         NodeTracker.saveCSVWithPosition(UpperTest1.getInstance(), "상체1");
         NodeTracker.saveCSVWithPosition(UpperTest2.getInstance(), "상체2");
+
+        NodeTracker.saveCSVWithPosition(MultiExtension1.getInstance(), "복수신전1");
+        NodeTracker.saveCSVWithPosition(MultiExtension2.getInstance(), "복수신전2");
+        NodeTracker.saveCSVWithPosition(MultiExtension3.getInstance(), "복수신전3");
+
+        NodeTracker.saveCSVWithPosition(MultiFlexionTest.getInstance(), "복수굴곡");
     }
 }
 

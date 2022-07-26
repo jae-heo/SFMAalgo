@@ -12,7 +12,8 @@ import lombok.Setter;
 public class Child {
     private Node node;
     private String description;
-    private Node nextTest;
+    @Builder.Default
+    private Node nextTest = null;
 
     public Child(String description) {
         this.node = null;

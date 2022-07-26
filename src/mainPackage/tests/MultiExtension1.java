@@ -29,6 +29,7 @@ public class MultiExtension1 extends Test {
         Node node6 = Node.builder()
                 .name("능동 엎드린자세 팔꿈치지지 신전-회전 30도")
                 .imageFileName("4_5")
+
                 .build()
                 .addChild("O", Child.builder().node(node8).build())
                 .addChild("X_P", Child.builder().node(node7).build());

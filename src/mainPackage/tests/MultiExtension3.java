@@ -62,7 +62,7 @@ public class MultiExtension3 extends Test {
                         " 하고 경추 관련 문제를 배제하도록 한다.").build())
                 .addChild("X_P", Child.builder().node(node2).build());
 
-        addNode(node1, node2, node3, node4, node5, node6);
+        addNode(node1, node2, node3, node4, node5, node6, node7);
     }
 
     public static Test getInstance() {
