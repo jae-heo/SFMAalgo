@@ -1,7 +1,7 @@
 package mainPackage.v1.tests;
 
-import mainPackage.domain.Child;
-import mainPackage.domain.Node;
+import mainPackage.v1.domain.Child;
+import mainPackage.v1.domain.Node;
 
 public class MultiExtension2 extends Test {
     public static Test instance;

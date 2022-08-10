@@ -1,8 +1,7 @@
 package mainPackage.v1.tests;
 
-import mainPackage.domain.Child;
-import mainPackage.domain.Node;
-
+import mainPackage.v1.domain.Child;
+import mainPackage.v1.domain.Node;
 public class UpperTest1 extends Test {
     public UpperTest1() {
         Node node10 = Node.builder()

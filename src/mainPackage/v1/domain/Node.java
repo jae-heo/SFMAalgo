@@ -1,4 +1,4 @@
-package mainPackage.domain;
+package mainPackage.v1.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

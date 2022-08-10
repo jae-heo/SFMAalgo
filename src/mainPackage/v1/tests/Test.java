@@ -1,6 +1,6 @@
 package mainPackage.v1.tests;
 
-import mainPackage.domain.Node;
+import mainPackage.v1.domain.Node;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

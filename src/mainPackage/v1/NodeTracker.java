@@ -1,8 +1,8 @@
-package mainPackage.util;
+package mainPackage.v1;
 
-import mainPackage.domain.Child;
-import mainPackage.domain.Node;
-import mainPackage.domain.NodePrint;
+import mainPackage.v1.domain.Child;
+import mainPackage.v1.domain.Node;
+import mainPackage.v1.domain.NodePrint;
 import mainPackage.v1.tests.Test;
 
 import java.io.File;
