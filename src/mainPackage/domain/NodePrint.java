@@ -10,4 +10,5 @@ import lombok.Setter;
 public class NodePrint {
     Node node;
     String selection;
+    String description;
 }

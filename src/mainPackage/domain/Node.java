@@ -25,7 +25,6 @@ public class Node {
         this.isCollectSense = isCollectSense;
         nodeMap.put(name, this);
     }
-
     public Node addChild(String selection, Child child) {
         this.children.put(selection, child);
         return this;

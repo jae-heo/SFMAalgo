@@ -1,4 +1,4 @@
-package mainPackage.tests;
+package mainPackage.v1.tests;
 
 import mainPackage.domain.Child;
 import mainPackage.domain.Node;
