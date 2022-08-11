@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import java.util.HashMap;
 
-import static mainPackage.App.nodeMap;
+import static mainPackage.v1.AppV1.nodeMap;
 
 @Setter
 @Getter

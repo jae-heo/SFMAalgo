@@ -1,21 +1,12 @@
 package mainPackage;
 
-import mainPackage.v1.AppV1;
-import mainPackage.v1.domain.Node;
-
-import java.util.HashMap;
+import mainPackage.v2.AppV2;
 
 
 public class App {
-    public static HashMap<String, Node> nodeMap = new HashMap<>();
     public static void main(String[] args) {
-        AppV1.execV1();
+        AppV2 v2 = new AppV2();
+        v2.runMultiFlexionTest();
     }
-
-    private static void execV2() {
-
-
-    }
-
 
 }

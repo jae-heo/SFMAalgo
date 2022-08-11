@@ -1,9 +1,14 @@
 package mainPackage.v1;
 
+import mainPackage.v1.domain.Node;
 import mainPackage.v1.tests.*;
 
+import java.util.HashMap;
+
 public class AppV1 {
-    public static void execV1() {
+    public static HashMap<String, Node> nodeMap = new HashMap<>();
+
+    public static void run() {
         NodeTracker.saveCSVWithPosition(SpineTest1.getInstance(), "SpineTest1");
         NodeTracker.saveCSVWithPosition(SpineTest2.getInstance(), "SpineTest2");
         NodeTracker.saveCSVWithPosition(SpineTest3.getInstance(), "SpineTest3");
