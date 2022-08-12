@@ -16,7 +16,7 @@ public class Child {
     @Builder.Default
     private String nextSingleTestName = null;
     @Builder.Default
-    private Node nextTest = null;
+    private Node[] nextTest = null;
     @Builder.Default
     private Boolean isConditional = false;
     @Builder.Default

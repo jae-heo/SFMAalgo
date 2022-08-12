@@ -5,9 +5,9 @@ import mainPackage.v2.domain.Node;
 
 import static mainPackage.v2.domain.Node.SELECTION.*;
 
-public class MultiExtension3 extends Test {
+public class MSE3 extends Test {
     public static Test instance;
-    public MultiExtension3() {
+    public MSE3() {
         Node node7 = Node.builder()
                 .name("수동 요추 잠금 IR 신전-회전 50도")
                 .imageFileName("4_17")
@@ -46,7 +46,7 @@ public class MultiExtension3 extends Test {
                 .imageFileName("4_14")
                 .build()
                 .addChild(FN, Child.builder().description("외측/후방 사슬 TED &/or 고관절 신전 기능제한 가능성")
-                        .nextTest(MultiExtension2.getInstance().getHead()).build())
+                        .nextTest(new Node[]{MSE2.getInstance().getHead()}).build())
                 .addChild(FNBNC, Child.builder().description("외측/후방 사슬 TED &/or 고관절 신전 기능제한 가능성 - 하체 신전 차트를 진행하도록 한다").build())
                 //이 경우에는 주황색이기때문에 정보에만 진행하도록 한다고 적어주고 실제로는 진행하지 않는다.
                 .addChild(DN, Child.builder().node(node5).build())
@@ -73,7 +73,7 @@ public class MultiExtension3 extends Test {
     }
 
     public static Test getInstance() {
-        if (MultiExtension3.instance == null) { MultiExtension3.instance = new MultiExtension3();}
+        if (MSE3.instance == null) { MSE3.instance = new MSE3();}
         return instance;
     }
 }

@@ -7,9 +7,9 @@ import static mainPackage.v2.domain.Child.COLOR.GREEN;
 import static mainPackage.v2.domain.Child.COLOR.RED;
 import static mainPackage.v2.domain.Node.SELECTION.*;
 
-public class SpineTest2 extends mainPackage.v2.tests.Test {
+public class CSPB2 extends mainPackage.v2.tests.Test {
     public static mainPackage.v2.tests.Test instance;
-    public SpineTest2() {
+    public CSPB2() {
         Node node1 = Node.builder()
                 .name("수동 누운자세 경추 신전")
                 .imageFileName("1_7")
@@ -30,7 +30,7 @@ public class SpineTest2 extends mainPackage.v2.tests.Test {
     }
 
     public static Test getInstance() {
-        if (SpineTest2.instance == null) { SpineTest2.instance = new SpineTest2();}
+        if (CSPB2.instance == null) { CSPB2.instance = new CSPB2();}
         return instance;
     }
 }

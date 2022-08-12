@@ -6,9 +6,9 @@ import mainPackage.v2.domain.Node;
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
 
-public class MultiExtension2 extends Test {
+public class MSE2 extends Test {
     public static Test instance;
-    public MultiExtension2() {
+    public MSE2() {
         Node node6 = Node.builder()
                 .name("롤링2")
                 .imageFileName("4_11")
@@ -69,7 +69,7 @@ public class MultiExtension2 extends Test {
     }
 
     public static Test getInstance() {
-        if (MultiExtension2.instance == null) { MultiExtension2.instance = new MultiExtension2();}
+        if (MSE2.instance == null) { MSE2.instance = new MSE2();}
         return instance;
     }
 }

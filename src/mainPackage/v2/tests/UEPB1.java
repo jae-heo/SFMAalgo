@@ -5,9 +5,9 @@ import mainPackage.v2.domain.Node;
 
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
-public class UpperTest1 extends mainPackage.v2.tests.Test {
+public class UEPB1 extends mainPackage.v2.tests.Test {
     public static mainPackage.v2.tests.Test instance;
-    public UpperTest1() {
+    public UEPB1() {
         Node node10 = Node.builder()
                 .name("능동 요추 잠금 신전-회전 (가슴) 50도")
                 .imageFileName("2_10")
@@ -68,8 +68,10 @@ public class UpperTest1 extends mainPackage.v2.tests.Test {
                 .name("누운자세 교차 상지 패턴 검사")
                 .imageFileName("2_3")
                 .build()
-                .addChild(FN, Child.builder().color(BLUE).description("패턴1을 위한 분리된 자세 &/ or 어깨대 SMCD. 척추신전 하위 검사로 간다.").nextTest(mainPackage.v2.tests.MultiExtension1.getInstance().getHead()).build())
-                .addChild(DN, Child.builder().color(BLUE).description("패턴1의 기능적 어깨 패턴 SMCD. 척추신전 하위 검사로 간다.").nextTest(MultiExtension1.getInstance().getHead()).build())
+                .addChild(FN, Child.builder().color(BLUE).description("패턴1을 위한 분리된 자세 &/ or 어깨대 SMCD")
+                        .nextTest(new Node[]{MSE1.getInstance().getHead()}).build())
+                .addChild(DN, Child.builder().color(BLUE).description("패턴1의 기능적 어깨 패턴 SMCD")
+                        .nextTest(new Node[]{MSE1.getInstance().getHead()}).build())
                 .addChild(P, Child.builder().color(RED).description("통증 치료").build());
 
         Node node2 = Node.builder()
@@ -100,7 +102,7 @@ public class UpperTest1 extends mainPackage.v2.tests.Test {
     }
 
     public static Test getInstance() {
-        if (UpperTest1.instance == null) { UpperTest1.instance = new UpperTest1();}
+        if (UEPB1.instance == null) { UEPB1.instance = new UEPB1();}
         return instance;
     }
 }

@@ -5,35 +5,37 @@ import mainPackage.v2.domain.Node;
 
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
-public class MultiRotationTest2 extends mainPackage.v2.tests.Test {
+public class MSR2 extends mainPackage.v2.tests.Test {
     public static mainPackage.v2.tests.Test instance;
-    public MultiRotationTest2() {
+    public MSR2() {
         Node node6 = Node.builder()
                 .name("롤링")
                 .imageFileName("4_11")
                 .build()
-                .addChild(FN, Child.builder().color(BLUE).description("체중지지 고관절 내회전 SMCD - 경골회전 플로우차트 및" +
-                        " 하체신전 하위 검사로 이동").build())
-                .addChild(DN, Child.builder().color(BLUE).description("펀더먼털 고관절 회전 SMCD - 경골회전 플로우차트 및 " +
-                        "하체신전 하위 검사로 이동").build())
-                .addChild(P, Child.builder().color(BLUE).description("통증을 치료하고-경골회전 으로").build());
+                .addChild(FN, Child.builder().color(BLUE).description("체중지지 고관절 내회전 SMCD")
+                        .nextTest(new Node[]{MSR4.getInstance().getHead(), MSR5.getInstance().getHead()}).build())
+                .addChild(DN, Child.builder().color(BLUE).description("펀더먼털 고관절 회전 SMCD")
+                        .nextTest(new Node[]{MSR4.getInstance().getHead(), MSR5.getInstance().getHead()}).build())
+                .addChild(P, Child.builder().color(BLUE).description("통증 치료")
+                        .nextTest(new Node[]{MSR4.getInstance().getHead(), MSR5.getInstance().getHead()}).build());
 
         Node node5 = Node.builder()
                 .name("수동 엎드린자세 고관절 외회전 40도")
                 .imageFileName("5_10")
                 .build()
-                .addChild(FN, Child.builder().color(WHITE).description("앉은자세 수동 회전이 DN이면 멈추고 DN을 치료한다. 그렇지" +
-                        " 않으면 플로우챠트를 진행").node(node6).build())
-                .addChild(DN, Child.builder().color(BLUE).description("고관절 내회전 + 신전에서 고관절 JMD &/or TED - 경골회전" +
-                        " 플로우차트 및 하체신전 하위 검사로 이동").build())
-                .addChild(P, Child.builder().color(BLUE).description("통증을 치료하고 - 경골회전으로").build());
+                .addChild(FN, Child.builder().color(WHITE).description("앉은자세 수동 회전 DN을 치료").isConditional(true)
+                        .conditionSelection(DN).conditionNodeName("수동 앉은자세 고관절 외회전 40도").node(node6).build())
+                .addChild(DN, Child.builder().color(BLUE).description("고관절 내회전 + 신전에서 고관절 JMD &/or TED")
+                        .nextTest(new Node[]{MSR4.getInstance().getHead(), MSR5.getInstance().getHead()}).build())
+                .addChild(P, Child.builder().color(BLUE).description("통증 치료")
+                        .nextTest(new Node[]{MSR4.getInstance().getHead(), MSR5.getInstance().getHead()}).build());
 
         Node node4 = Node.builder()
                 .name("능동 엎드린자세 고관절 외회전 40도")
                 .imageFileName("5_9")
                 .build()
-                .addChild(FN, Child.builder().color(WHITE).node(node6).description("앉은자세 수동 회전이 DN이면 멈추고 DN을" +
-                        " 치료한다. 그렇지 않으면 플로우차트를 진행").build())
+                .addChild(FN, Child.builder().color(WHITE).node(node6).description("앉은자세 수동 회전 DN을 치료").isConditional(true)
+                        .conditionSelection(DN).conditionNodeName("수동 앉은자세 고관절 외회전 40도").build())
                 .addChild(DN, Child.builder().color(WHITE).node(node5).build())
                 .addChild(P, Child.builder().color(WHITE).node(node5).build());
 
@@ -56,7 +58,7 @@ public class MultiRotationTest2 extends mainPackage.v2.tests.Test {
     }
 
     public static Test getInstance() {
-        if (MultiRotationTest2.instance == null) { MultiRotationTest2.instance = new MultiRotationTest2();}
+        if (MSR2.instance == null) { MSR2.instance = new MSR2();}
         return instance;
     }
 }

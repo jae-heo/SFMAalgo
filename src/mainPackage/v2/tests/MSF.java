@@ -6,10 +6,10 @@ import mainPackage.v2.domain.Node;
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
 
-public class MultiFlexionTest extends Test {
+public class MSF extends Test {
     public static Test instance;
 
-    public MultiFlexionTest() {
+    public MSF() {
         Node node8 = Node.builder()
                 .name("누운자세 허벅지 잡고 가슴 당기기")
                 .imageFileName("3_7")
@@ -78,7 +78,7 @@ public class MultiFlexionTest extends Test {
     }
 
     public static Test getInstance() {
-        if (MultiFlexionTest.instance == null) { MultiFlexionTest.instance = new MultiFlexionTest();}
+        if (MSF.instance == null) { MSF.instance = new MSF();}
         return instance;
     }
 }

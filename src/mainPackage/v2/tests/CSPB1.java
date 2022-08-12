@@ -5,9 +5,9 @@ import mainPackage.v2.domain.Node;
 
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
-public class SpineTest1 extends Test {
+public class CSPB1 extends Test {
     public static Test instance;
-    public SpineTest1() {
+    public CSPB1() {
         Node node3 = Node.builder()
                 .name("능동 누운자세 후두-환추 경추 굴곡 20도")
                 .imageFileName("1_3")
@@ -47,7 +47,7 @@ public class SpineTest1 extends Test {
     }
 
     public static Test getInstance() {
-        if (SpineTest1.instance == null) { SpineTest1.instance = new SpineTest1();}
+        if (CSPB1.instance == null) { CSPB1.instance = new CSPB1();}
         return instance;
     }
 }

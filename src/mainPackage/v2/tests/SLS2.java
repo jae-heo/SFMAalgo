@@ -6,10 +6,10 @@ import mainPackage.v2.domain.Node;
 
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
-public class OneLegTest2 extends mainPackage.v2.tests.Test {
+public class SLS2 extends mainPackage.v2.tests.Test {
 
     public static mainPackage.v2.tests.Test instance;
-    public OneLegTest2() {
+    public SLS2() {
         Node node6 = Node.builder()
                 .name("수동 앉아서 발목 내반/외반")
                 .imageFileName("6_11")
@@ -62,7 +62,7 @@ public class OneLegTest2 extends mainPackage.v2.tests.Test {
     }
 
     public static Test getInstance() {
-        if (OneLegTest2.instance == null) { OneLegTest2.instance = new OneLegTest2();}
+        if (SLS2.instance == null) { SLS2.instance = new SLS2();}
         return instance;
     }
 }
