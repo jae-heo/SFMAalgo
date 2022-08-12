@@ -4,7 +4,7 @@ import mainPackage.v2.domain.Child;
 import mainPackage.v2.domain.Child.COLOR;
 import mainPackage.v2.domain.Node;
 import mainPackage.v2.domain.Node.SELECTION;
-import mainPackage.v2.tests.MultiFlexionTest;
+import mainPackage.v2.tests.FirstTest;
 import mainPackage.v2.tests.Test;
 
 import java.util.ArrayList;
@@ -18,12 +18,29 @@ public class AppV2 {
     HashMap<Node, SELECTION> nodeHistory = new HashMap<>();
     ArrayList<Node> nextTests = new ArrayList<>();
     ArrayList<Node> nextSingleTests = new ArrayList<>();
-    Test multiFlexionTest = MultiFlexionTest.getInstance();
+    ArrayList<Test> testHistory = new ArrayList<>();
+    ArrayList<String> currentSelectionNames = new ArrayList<>();
 
-    public void runMultiFlexionTest() {
-        Node currentNode = multiFlexionTest.getHead();
+    Boolean endTestFlag = false;
+    Node currentNode = FirstTest.getInstance().getHead();
+
+    public void runTest() {
         Set<SELECTION> currentSelections = currentNode.getChildren().keySet();
-        ArrayList<String> currentSelectionNames = new ArrayList<>();
+
+        while (true) {
+            String selection = getSelection(currentSelections);
+            Child currentChild = currentNode.getChildren().get(SELECTION.valueOf(selection));
+
+            if (currentChild.getNextTest() != null) {
+
+            }
+            break;
+        }
+
+
+
+
+
         while (true) {
             System.out.println("하나를 선택해주세요");
             for (SELECTION selection : currentSelections) {
@@ -32,9 +49,6 @@ public class AppV2 {
             }
             System.out.println("\n");
 
-            /**
-             * 보기를 보여준 후 선택지를 받는 부분, 옳지 않은 선택지를 입력시 다시 입력받는다.
-             */
             Scanner scanner = new Scanner(System.in);
             String selection = scanner.next();
             while (!currentSelectionNames.contains(selection)) {
@@ -76,5 +90,22 @@ public class AppV2 {
          */
 
 
+    }
+
+    private String getSelection(Set<SELECTION> currentSelections) {
+        String selection;
+        System.out.println("결과를 선택해주세요");
+        for (SELECTION sel : currentSelections) {
+            System.out.print(sel + ":" + sel.getName() + "   ");
+            currentSelectionNames.add(sel.name());
+        }
+        System.out.println("\n");
+        Scanner scanner = new Scanner(System.in);
+        selection = scanner.next();
+        while (!currentSelectionNames.contains(selection)) {
+            System.out.println("다시 입력해주세요");
+            selection = scanner.next();
+        }
+        return selection;
     }
 }
