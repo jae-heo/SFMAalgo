@@ -37,7 +37,7 @@ public class NodeTracker {
 
         iterNode(test.getHead(), printList);
 
-        try (PrintWriter writer = new PrintWriter(new File(fileName + ".csv"))) {
+        try (PrintWriter writer = new PrintWriter(new File("output/" + fileName + ".csv"))) {
             StringBuilder sb = new StringBuilder();
             for (String name : test.getNameList()) {
                 sb.append(name).append(",");

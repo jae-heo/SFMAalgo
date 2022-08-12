@@ -6,8 +6,8 @@ import mainPackage.v2.domain.Node;
 import static mainPackage.v2.domain.Child.COLOR.*;
 import static mainPackage.v2.domain.Node.SELECTION.*;
 
-public class MultiFlexionTest extends mainPackage.v2.tests.Test {
-    public static mainPackage.v2.tests.Test instance;
+public class MultiFlexionTest extends Test {
+    public static Test instance;
 
     public MultiFlexionTest() {
         Node node8 = Node.builder()

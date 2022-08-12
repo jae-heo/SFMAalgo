@@ -14,7 +14,7 @@ public class Child {
     private String description;
     private COLOR color;
     @Builder.Default
-    private Node nextSingleTest = null;
+    private String nextSingleTestName = null;
     @Builder.Default
     private Node nextTest = null;
     @Builder.Default

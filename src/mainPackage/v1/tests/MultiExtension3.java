@@ -2,6 +2,7 @@ package mainPackage.v1.tests;
 
 import mainPackage.v1.domain.Child;
 import mainPackage.v1.domain.Node;
+
 public class MultiExtension3 extends Test {
     public static Test instance;
     public MultiExtension3() {
@@ -40,10 +41,8 @@ public class MultiExtension3 extends Test {
                 .name("누운자세-고관절 신전 광배근 검사")
                 .imageFileName("4_14")
                 .build()
-                .addChild("O", Child.builder().description("외측/후방 사슬 TED &/or 고관절 신전 기능제한 가능성 - " +
-                        "하체 신전 차트를 진행하도록 한다.").build())
-                .addChild("O1", Child.builder().description("어깨굴곡 향상되지만 완전하지 않다. 외측/후방 사슬 " +
-                        "TED &/or 고관절 신전 기능제한 가능성 - 하체 신전 차트를 진행하도록 한다.").build())
+                .addChild("O", Child.builder().description("외측/후방 사슬 TED &/or 고관절 신전 기능제한 가능성").build())
+                .addChild("O1", Child.builder().description("어깨굴곡 향상되지만 완전하지 않다. 외측/후방 사슬 TED &/or 고관절 신전 기능제한 가능성").build())
                 .addChild("X_P", Child.builder().node(node5).build());
 
         Node node2 = Node.builder()
@@ -57,8 +56,7 @@ public class MultiExtension3 extends Test {
                 .name("한쪽 어깨 후방 신전")
                 .imageFileName("4_12")
                 .build()
-                .addChild("O", Child.builder().description("흉추 관련 가능성을 보기위해 척추신전의 프레스업을 재확인" +
-                        " 하고 경추 관련 문제를 배제하도록 한다.").build())
+                .addChild("O", Child.builder().build())
                 .addChild("X_P", Child.builder().node(node2).build());
 
         addNode(node1, node2, node3, node4, node5, node6, node7);

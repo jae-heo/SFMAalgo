@@ -10,18 +10,18 @@ public class MultiRotationTest1 extends Test {
                 .imageFileName("4_11")
                 .build()
                 .addChild("O", Child.builder().description("흉추 신전 SMCD가 있으면 요추는 정상이고. 없으면 -" +
-                        "체중지지 척추 회전 SMCD - 고관절 회전 플로우차트로").build())
-                .addChild("X", Child.builder().description("펀더먼털 척추 신전 SMCD - 고관절 회전으로").build())
-                .addChild("P", Child.builder().description("통증 치료 - 고관절 회전으로").build());
+                        "체중지지 척추 회전 SMCD").build())
+                .addChild("X", Child.builder().description("펀더먼털 척추 신전 SMCD").build())
+                .addChild("P", Child.builder().description("통증 치료").build());
 
         Node node7 = Node.builder()
                 .name("수동 엎드린자세 팔꿈치지지 IR 신전-회전 30도")
                 .imageFileName("5_6")
                 .build()
                 .addChild("O", Child.builder().node(node8).build())
-                .addChild("X1", Child.builder().description("요추 한쪽 신전/ 회전 JMD &/ or TED - 고관절 회전 플로우차트로 ").build())
-                .addChild("X2", Child.builder().description("요추 양쪽 신전/ 회전 JMD &/ or TED - 고관절 회전 플로우차트로 ").build())
-                .addChild("P", Child.builder().description("통증 치료 - 고관절 회전 플로우차트로").build());
+                .addChild("X1", Child.builder().description("요추 한쪽 신전/ 회전 JMD &/ or TED ").build())
+                .addChild("X2", Child.builder().description("요추 양쪽 신전/ 회전 JMD &/ or TED ").build())
+                .addChild("P", Child.builder().description("통증 치료").build());
 
         Node node6 = Node.builder()
                 .name("능동 엎드린자세 팔꿈치지지 IR 신전-회전 30도")
@@ -35,9 +35,9 @@ public class MultiRotationTest1 extends Test {
                 .imageFileName("5_4")
                 .build()
                 .addChild("O", Child.builder().description("흉추 회전 SMCD").node(node6).build())
-                .addChild("X1", Child.builder().description("흉추 한쪽 신전/회전 JMD &/or TED - 고관절 회전 플로우차트로").build())
-                .addChild("X2", Child.builder().description("흉추 양쪽 신전/회전 JMD &/or TED - 고관절 회전 플로우차트로").build())
-                .addChild("P", Child.builder().description("통증치료 - 고관절 회전 플로우차트로").build());
+                .addChild("X1", Child.builder().description("흉추 한쪽 신전/회전 JMD &/or TED").build())
+                .addChild("X2", Child.builder().description("흉추 양쪽 신전/회전 JMD &/or TED").build())
+                .addChild("P", Child.builder().description("통증치료").build());
 
         Node node4 = Node.builder()
                 .name("능동 요추 잠금 IR 신전-회전 50도")
@@ -58,7 +58,7 @@ public class MultiRotationTest1 extends Test {
                 .name("앉은 자세 회전 50도")
                 .imageFileName("5_1")
                 .build()
-                .addChild("O", Child.builder().description("고관절 회전 플로우차트로").build())
+                .addChild("O", Child.builder().build())
                 .addChild("X_P", Child.builder().node(node3).build());
 
         Node node1 = Node.builder()

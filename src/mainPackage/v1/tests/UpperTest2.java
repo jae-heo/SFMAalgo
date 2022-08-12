@@ -64,8 +64,8 @@ public class UpperTest2 extends Test {
                 .name("누운자세 교차 상지 패턴 검사")
                 .imageFileName("2_13")
                 .build()
-                .addChild("O", Child.builder().description("패턴2을 위한 분리된 자세 &/ or 어깨대 SMCD. 척추신전 하위 검사로 간다.").nextTest1(MultiExtension1.getInstance().getHead()).build())
-                .addChild("X", Child.builder().description("패턴2의 기능적 어깨 패턴 SMCD. 척추신전 하위 검사로 간다.").nextTest1(MultiExtension1.getInstance().getHead()).build())
+                .addChild("O", Child.builder().description("패턴2을 위한 분리된 자세 &/ or 어깨대 SMCD.").nextTest1(MultiExtension1.getInstance().getHead()).build())
+                .addChild("X", Child.builder().description("패턴2의 기능적 어깨 패턴 SMCD.").nextTest1(MultiExtension1.getInstance().getHead()).build())
                 .addChild("P", Child.builder().description("통증 치료").build());
 
         Node node2 = Node.builder()

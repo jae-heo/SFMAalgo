@@ -11,10 +11,8 @@ public class OverheadSquatTest extends Test{
                 .name("누워서 허벅지 잡고 무릎 가슴 당기기")
                 .imageFileName("7_5")
                 .build()
-                .addChild("O", Child.builder().description("무릎 JMD (굴곡) 그리고/또는 하부 전방 체인 TED, " +
-                        "복수-분절 신전 하위검사로 이동한다.").build())
-                .addChild("X", Child.builder().description("고관절 JMD 그리고/또는 후방 체인 TED - 고관절을 위한 " +
-                        "복수분절 굴곡으로 이동한다. 무릎 JMD 가능성이 있으므로 - 복수-분절 신전 하위검사로 이동한다.").build())
+                .addChild("O", Child.builder().description("무릎 JMD (굴곡) 그리고/또는 하부 전방 체인 TED").build())
+                .addChild("X", Child.builder().description("고관절 JMD 그리고/또는 후방 체인 TED").build())
                 .addChild("P", Child.builder().description("통증을 치료한다.").build());
 
         Node node5 = Node.builder()
@@ -23,7 +21,7 @@ public class OverheadSquatTest extends Test{
                 .build()
                 .addChild("O", Child.builder().description("만약 배측굴곡이 FN이면 = 체중 지지 코어, 무릎 그리고/또는 " +
                         "고관절 굴곡 SMCD. 만약 배측굴곡이 DN이면, 무릎, 고관절 코어는 정상으로 생각한다. 만약 배측굴곡이 DP또는 " +
-                        "FP이면 이것을 빨간상자라고 생각하고 배측굴곡을 치료한다. 복수-분절 신전 하위검사로 이동한다.").build())
+                        "FP이면 이것을 빨간상자라고 생각하고 배측굴곡을 치료한다").build())
                 .addChild("X_P", Child.builder().node(node6).build());
 
         Node node4 = Node.builder()

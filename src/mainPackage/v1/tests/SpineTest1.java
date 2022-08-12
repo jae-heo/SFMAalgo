@@ -16,7 +16,7 @@ public class SpineTest1 extends Test{
                 .addChild("P", Child.builder().description("통증 치료").build());
 
         Node node2 = Node.builder()
-                .name("능동 누운자세경추 굴곡")
+                .name("수동 누운자세경추 굴곡")
                 .imageFileName("1_2")
                 .build()
                 .addChild("O", Child.builder().description("능동 경추 굴곡 SMCD").build())
